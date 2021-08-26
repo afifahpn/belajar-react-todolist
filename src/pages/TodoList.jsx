@@ -11,10 +11,17 @@ const TodoList = () => {
     { text: "Learning React Hooks!" },
     { text: "Learning styling in React!" }
   ]);
+
+  const addTodo = (value) => {
+    const addedTodo = [...todos, { text: value }]; //membuat arrat baru yg apa ada di usestates
+
+    setTodos(addedTodo); //
+  };
+
   return (
     <Paper>
       <Header />
-      <TodoForm />
+      <TodoForm addTodo={addTodo} />
       <Todos todos={todos} />
     </Paper>
   );
